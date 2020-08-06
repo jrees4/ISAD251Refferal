@@ -3,10 +3,7 @@ The refferal work for ISAD 251.
 
 # Source code
  Must be clearly in its own separate folder on GitHub repository
- Technologies in use must be only SQL, HTML, CSS, Javascript and either PHP or
-C#
-REFERRED COURSEWORK 2019/20 ISAD251
-PAGE 6 OF 13
+ Technologies in use must be only SQL, HTML, CSS, Javascript and either PHP or C#
 o No other server-side coding language is acceptable.
 o The interface code may contain Razor if required.
  Frameworks such as Bootstrap and JQuery are expected to be in use
