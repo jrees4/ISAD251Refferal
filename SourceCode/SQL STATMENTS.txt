@@ -1,11 +1,28 @@
 // CAN't do this due to permissions. CREATE DATABASE CW251;
 
+//Clear out any table with the same name.
+DROP TABLE Appointments;
+
 //UNIQUE isnt needed for the ID because its a primary key
 CREATE TABLE Appointments (
     AppointmentID int,
-    AppointmentName varchar(255),
+    AppointmentName varchar(255) NOT NULL,
     AppointmentDescription varchar(255),
-    AppointmentTarget varchar(255),
+    AppointmentTarget varchar(255) NOT NULL,
     AppointmentTime Date,
     PRIMARY KEY (AppointmentID)
 );
+
+//Test data
+INSERT INTO Appointments (AppointmentID, AppointmentName, AppointmentDescription, AppointmentTarget, AppointmentTime)
+VALUES (01, 'DentistTest', 'DescriptionTest', 'TimmyTest', '2020/07/15');
+
+//Populate the table with data
+INSERT INTO Appointments (AppointmentID, AppointmentName, AppointmentDescription, AppointmentTarget, AppointmentTime)
+VALUES (02, 'Dentist', 'Whitening', 'Jimmy', '2020/08/10'),
+(03, 'Doctors', 'Contact GP', 'Timmy', '2020/08/15'),
+(04, 'Medical', 'Health check up', 'Jimmy', '2020/07/20'),
+(05, 'Dentist', 'Tooth ache', 'Timmy', '2020/07/21');
+
+//Creates a basic view to make sure the data is there, a test.
+SELECT * FROM Appointments
