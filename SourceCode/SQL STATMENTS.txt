@@ -1,0 +1,11 @@
+// CAN't do this due to permissions. CREATE DATABASE CW251;
+
+//UNIQUE isnt needed for the ID because its a primary key
+CREATE TABLE Appointments (
+    AppointmentID int,
+    AppointmentName varchar(255),
+    AppointmentDescription varchar(255),
+    AppointmentTarget varchar(255),
+    AppointmentTime Date,
+    PRIMARY KEY (AppointmentID)
+);
