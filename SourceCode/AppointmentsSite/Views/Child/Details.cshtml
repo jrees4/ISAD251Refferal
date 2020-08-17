@@ -1,0 +1,42 @@
+﻿@model AppointmentsSite.Appointments
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Appointments</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AppointmentName)
+        </dt>
+        <dd class = "padding-left col-sm-14">
+            @Html.DisplayFor(model => model.AppointmentName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AppointmentDescription)
+        </dt>
+        <dd class = "padding-left col-sm-14">
+            @Html.DisplayFor(model => model.AppointmentDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AppointmentTarget)
+        </dt>
+        <dd class = "padding-left col-sm-14">
+            @Html.DisplayFor(model => model.AppointmentTarget)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AppointmentTime)
+        </dt>
+        <dd class = "padding-left col-sm-14">
+            @Html.DisplayFor(model => model.AppointmentTime)
+        </dd>
+    </dl>
+</div>
+<div>
+    
+    <a asp-action="Index">Back to List</a>
+</div>
