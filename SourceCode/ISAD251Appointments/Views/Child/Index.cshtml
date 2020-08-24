@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ISAD251Appointments.Models.Appointments>
+
+@{
+    ViewData["Title"] = "Child";
+}
+@*
+
+    If you wanted to do things based on user.
+        .Where(i => i.AppointmentTarget == "Jimmy")
+
+*@
+
+
+<h1>Jimmy's Appointments</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentTarget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentTime)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentIsComplete)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Where(i => i.AppointmentIsComplete == false))
+        {
+            
+           if ("Jimmy" == item.AppointmentTarget) { 
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentTarget)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentIsComplete)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.AppointmentID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.AppointmentID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AppointmentID">Delete</a>
+                </td>
+            </tr>
+            }
+        }
+    </tbody>
+</table>
