@@ -5,15 +5,22 @@ DROP TABLE Appointments;
 
 //UNIQUE isnt needed for the ID because its a primary key, auto increment means it will create an id
 CREATE TABLE Appointments (
-    AppointmentID int NOT NULL,
+    AppointmentID int IDENTITY(1,1) NOT NULL,
     AppointmentName varchar(255) NOT NULL,
-    AppointmentDescription varchar(255),
+    AppointmentDescription varchar(255) NULL,
     AppointmentTarget varchar(255) NOT NULL,
-    AppointmentTime Date,
-    AppointmentNote varchar(400),
-    AppointmentIsComplete BIT,
+    AppointmentTime Date NOT NULL,
+    AppointmentNote varchar(400) NULL,
+    AppointmentIsComplete BIT NOT NULL,
     PRIMARY KEY (AppointmentID)
 );
+
+//TABLE FOR USERS THAT WONT BE USED
+CREATE TABLE Users{
+ID int NOT NULL,
+NAME varchar(255),
+Password varchar(255)
+}
 
 //Test data
 INSERT INTO Appointments (AppointmentID, AppointmentName, AppointmentDescription, AppointmentTarget, AppointmentTime, AppointmentNote, AppointmentIsComplete)
